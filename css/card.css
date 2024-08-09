@@ -1,0 +1,124 @@
+/** ToDo: Make more of a generic card CSS to be able to be used in other places*/
+
+.course-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+
+    .course-card {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .course-card__hero-container {
+            margin: 1rem;
+            display: inherit;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            box-sizing: inherit;
+
+            .hero-wrapper {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+            }
+
+            svg {
+                width: 75px;
+                height: 75px;
+                aspect-ratio: 1/1;
+                padding: 1rem;
+            }
+
+            svg.--css {
+                color: #379ad6;
+            }
+
+            svg.--html {
+                color: #ec5840;
+            }
+
+            svg.--js {
+                color: #f8df1c;
+            }
+
+            .completion-information {
+                display: inherit;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                gap: 0.5rem;
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+                    padding: 0;
+                    color: var(--accent-col);
+                }
+                p {
+                    margin: 0;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .course-card__information-container {
+            display: inherit;
+            flex-direction: inherit;
+            gap: 1rem;
+            background-color: var(--secondary-bg-col);
+            padding: 1rem;
+            height: 100%;
+
+            h3,
+            p {
+                margin: 0
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 0.875rem;
+            }
+        }
+
+        .course-card__course-details-cta {
+            background-color: var(--tertiary-bg-col);
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            color: var(--tertiary-bg-active-col);
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color ease-in-out var(--animation-duration), color ease-in-out var(--animation-duration);
+
+            svg {
+                width: 10px;
+            }
+
+            &:hover {
+                background-color: var(--tertiary-bg-active-col);
+                color: var(--tertiary-bg-col);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .course-card-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .course-card-container {
+        grid-template-columns: 1fr;
+    }
+}
+

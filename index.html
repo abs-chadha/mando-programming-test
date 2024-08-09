@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/index.css">
     <meta charset="UTF-8">
     <title>Course Dashboard</title>
@@ -19,6 +20,7 @@
                 <p>I am a new frontend developer looking to progress my skills and ready myself for a future in this exciting industry.</p>
             </div>
             <div class="progress-bar-container __with-border">
+                <!-- ToDo: Make this dynamic -->
                 <div class="progress-bar"></div>
             </div>
             <div class="module-status-container">
@@ -32,22 +34,24 @@
             </div>
         </article>
     </section>
+    <!-- ToDo: Add Active filter style -->
+    <!-- ToDo: On click, hide/show relevant cards -->
     <div class="filter-buttons-container">
-        <button class="filter-button" data-category="all">
+        <button class="button" data-category="all">
             Show All
         </button>
-        <button class="filter-button" data-category="html">
+        <button class="button" data-category="html">
             HTML
         </button>
-        <button class="filter-button" data-category="js">
+        <button class="button" data-category="js">
             JavaScript
         </button>
-        <button class="filter-button" data-category="css">
+        <button class="button" data-category="css">
             CSS
         </button>
     </div>
 
-    <section class="card-container">
+    <section class="course-card-container">
         <div class="course-card __with-border" data-category="html">
             <figure class="course-card__hero-container">
                 <div class="hero-wrapper">
@@ -145,6 +149,32 @@
             </button>
         </div>
     </section>
+    <section class="form-container __with-border">
+        <!--ToDo: Save name and bio to the server.-->
+        <!--ToDo: Add validation. Conditional render using <small> tag to show error-->
+        <form action="/" method="post">
+            <div class="__form-row">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required class="__with-border __text-input">
+            </div>
+
+            <div class="__form-row">
+                <label for="bio">Bio:</label>
+                <textarea type="text" id="bio" name="bio" required class="__with-border __text-input"></textarea>
+            </div>
+
+            <div class="__form-footer">
+                <!--ToDo: Prevent default here. Keep user on this page and give them a confirmation.-->
+                <button type="submit" class="button">
+                    Submit
+                </button>
+            </div>
+
+        </form>
+    </section>
 </main>
 </body>
 </html>
+
+<!-- ToDo: use Fetch/Axios/XHR to load json and populate fields -->
+<!-- ToDo: If the site is fully static, use something Jekyll or Hugo -->
