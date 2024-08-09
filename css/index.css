@@ -1,0 +1,12 @@
+:root {
+    --main-bg-col: #f7f7f7;
+    --accent-col: #8db42b;
+    --primary-text-col: #666;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg-col);
+}
